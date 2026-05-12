@@ -3,45 +3,75 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Atelier Muse — a curated digital art house for paintings, sculpture, and photography. Explore exhibitions and request a private viewing."
+    />
+    <meta name="theme-color" content="#050505" />
     <title>Atelier Muse | Art Gallery</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Manrope:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <div class="atmosphere" aria-hidden="true">
+      <div class="bg-mesh"></div>
+      <div class="bg-glow"></div>
+      <div class="bg-glow bg-glow-2"></div>
+      <div class="bg-glow bg-glow-3"></div>
+      <div class="grain" aria-hidden="true"></div>
+    </div>
+
+    <div class="scroll-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-label="Page scroll progress"></div>
+
     <header class="hero" id="top">
-      <nav class="nav">
-        <a class="brand" href="#top">Atelier Muse</a>
-        <div class="nav-links">
+      <nav class="nav gs-reveal-down" aria-label="Primary">
+        <a class="brand" href="#top">
+          <span class="brand-mark" aria-hidden="true"></span>
+          Atelier Muse
+        </a>
+        <div class="nav-links" id="navLinks">
           <a href="#collection">Collection</a>
           <a href="#gallery">Gallery</a>
           <a href="#visit">Visit</a>
         </div>
+        <button type="button" class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Open menu">
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+        </button>
       </nav>
 
       <div class="hero-content">
         <div class="hero-copy">
-          <p class="eyebrow">Digital Art House</p>
-          <h1>Where modern color meets timeless imagination.</h1>
-          <p class="hero-text">
+          <p class="eyebrow gs-reveal-up">Digital Art House</p>
+          <h1 class="gs-reveal-up hero-title" style="transition-delay: 0.1s">
+            Where modern color meets timeless imagination.
+          </h1>
+          <p class="hero-text gs-reveal-up" style="transition-delay: 0.2s">
             Explore a curated online space for expressive paintings, sculptural
             forms, and experimental visuals sourced from artists around the
             world.
           </p>
-          <div class="hero-actions">
+          <div class="hero-actions gs-reveal-up" style="transition-delay: 0.3s">
             <a class="button button-primary" href="#gallery">View Gallery</a>
             <a class="button button-secondary" href="#visit">Book a Visit</a>
           </div>
         </div>
 
-        <div class="hero-card">
+        <div class="hero-card gs-reveal-scale">
+          <div class="hero-card-frame" aria-hidden="true"></div>
+          <div class="glass-layer"></div>
           <img
             src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?auto=format&fit=crop&w=900&q=80"
             alt="Art gallery wall with framed paintings"
+            width="900"
+            height="1200"
           />
           <div class="hero-card-caption">
             <span>Featured Exhibition</span>
@@ -51,130 +81,231 @@
       </div>
     </header>
 
-    <main>
+    <div class="marquee-wrap gs-scroll" aria-hidden="true">
+      <div class="marquee">
+        <span>Paintings</span>
+        <span class="marquee-dot">◆</span>
+        <span>Sculpture</span>
+        <span class="marquee-dot">◆</span>
+        <span>Photography</span>
+        <span class="marquee-dot">◆</span>
+        <span>Private Viewings</span>
+        <span class="marquee-dot">◆</span>
+        <span>Artist Talks</span>
+        <span class="marquee-dot">◆</span>
+        <span>Seasonal Showcases</span>
+        <span class="marquee-dot">◆</span>
+        <span>Paintings</span>
+        <span class="marquee-dot">◆</span>
+        <span>Sculpture</span>
+        <span class="marquee-dot">◆</span>
+        <span>Photography</span>
+        <span class="marquee-dot">◆</span>
+        <span>Private Viewings</span>
+        <span class="marquee-dot">◆</span>
+        <span>Artist Talks</span>
+        <span class="marquee-dot">◆</span>
+        <span>Seasonal Showcases</span>
+        <span class="marquee-dot">◆</span>
+      </div>
+    </div>
+
+    <main id="main">
+      <section class="section stats gs-scroll" aria-label="Highlights">
+        <div class="stats-grid">
+          <div class="stat">
+            <span class="stat-value" data-count="48">0</span>
+            <span class="stat-label">Represented artists</span>
+          </div>
+          <div class="stat">
+            <span class="stat-value" data-count="120">0</span>
+            <span class="stat-label">Works in rotation</span>
+          </div>
+          <div class="stat">
+            <span class="stat-value" data-count="32">0</span>
+            <span class="stat-label">Cities in our orbit</span>
+          </div>
+          <div class="stat">
+            <span class="stat-value" data-count="12">0</span>
+            <span class="stat-label">Seasonal showcases</span>
+          </div>
+        </div>
+      </section>
+
       <section class="section intro" id="collection">
-        <div class="section-heading">
+        <div class="section-heading gs-scroll">
           <p class="eyebrow">Curated Collection</p>
           <h2>Art that invites pause, wonder, and conversation.</h2>
         </div>
 
-        <div class="feature-grid">
-          <article class="feature-card">
-            <h3>Paintings</h3>
-            <p>
-              Layered brushwork, abstract movement, and immersive color stories
-              define our selected canvases.
-            </p>
+        <div class="bento-grid gs-scroll">
+          <article class="bento-card bento-large group">
+            <div
+              class="bento-bg"
+              style="background-image: url('https://images.unsplash.com/photo-1605721911519-3dfeb3be25e7?auto=format&fit=crop&w=1200&q=80');"
+            ></div>
+            <div class="bento-content glass-overlay">
+              <h3>Paintings</h3>
+              <p>
+                Layered brushwork, abstract movement, and immersive color stories define our selected canvases.
+              </p>
+              <span class="explore-link">Explore Paintings ↗</span>
+            </div>
           </article>
-          <article class="feature-card">
-            <h3>Sculpture</h3>
-            <p>
-              Discover tactile forms, hand-shaped materials, and objects that
-              transform space with quiet drama.
-            </p>
+
+          <article class="bento-card group">
+            <div
+              class="bento-bg"
+              style="background-image: url('https://images.unsplash.com/photo-1541961017774-22349e4a1262?auto=format&fit=crop&w=800&q=80');"
+            ></div>
+            <div class="bento-content glass-overlay">
+              <h3>Sculpture</h3>
+              <p>Discover tactile forms and quiet drama.</p>
+            </div>
           </article>
-          <article class="feature-card">
-            <h3>Photography</h3>
-            <p>
-              Atmospheric imagery captures fleeting moments, architectural
-              rhythm, and poetic light.
-            </p>
+
+          <article class="bento-card group">
+            <div
+              class="bento-bg"
+              style="background-image: url('https://images.unsplash.com/photo-1518998053901-5348d3961a04?auto=format&fit=crop&w=800&q=80');"
+            ></div>
+            <div class="bento-content glass-overlay">
+              <h3>Photography</h3>
+              <p>Atmospheric imagery and poetic light.</p>
+            </div>
           </article>
         </div>
       </section>
 
+      <blockquote class="section manifesto gs-scroll">
+        <p class="manifesto-quote">
+          We believe a gallery should feel like dusk in a great city—luminous, hushed, and full of possibility.
+        </p>
+        <cite class="manifesto-cite">— The Atelier Muse curatorial note</cite>
+      </blockquote>
+
       <section class="section gallery-section" id="gallery">
-        <div class="section-heading split">
+        <div class="section-heading split gs-scroll">
           <div>
             <p class="eyebrow">Online Gallery</p>
             <h2>Choose a mood and step into the collection.</h2>
           </div>
-          <div class="filters" aria-label="Gallery filters">
-            <button class="filter-btn active" data-filter="all">All</button>
-            <button class="filter-btn" data-filter="painting">Painting</button>
-            <button class="filter-btn" data-filter="sculpture">Sculpture</button>
-            <button class="filter-btn" data-filter="photo">Photo</button>
+          <div class="filters" role="group" aria-label="Gallery filters">
+            <button type="button" class="filter-btn active" data-filter="all">All</button>
+            <button type="button" class="filter-btn" data-filter="painting">Painting</button>
+            <button type="button" class="filter-btn" data-filter="sculpture">Sculpture</button>
+            <button type="button" class="filter-btn" data-filter="photo">Photo</button>
           </div>
         </div>
 
         <div class="gallery-grid">
-          <article class="art-card" data-category="painting">
-            <img
-              src="https://images.unsplash.com/photo-1547891654-e66ed7ebb968?auto=format&fit=crop&w=900&q=80"
-              alt="Abstract colorful painting"
-            />
-            <div class="art-card-body">
+          <article class="art-card gs-scroll" data-category="painting">
+            <div class="img-wrapper">
+              <img
+                src="https://images.unsplash.com/photo-1547891654-e66ed7ebb968?auto=format&fit=crop&w=900&q=80"
+                alt="Abstract colorful painting"
+                loading="lazy"
+                width="900"
+                height="1200"
+              />
+            </div>
+            <div class="art-card-body glass-overlay">
               <span>Painting</span>
               <h3>Chromatic Drift</h3>
               <p>Vivid layers and freeform energy in motion.</p>
             </div>
           </article>
 
-          <article class="art-card" data-category="sculpture">
-            <img
-              src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?auto=format&fit=crop&w=900&q=80"
-              alt="Museum sculpture in a gallery"
-            />
-            <div class="art-card-body">
-              <span>Sculpture</span>
-              <h3>Silent Form</h3>
-              <p>Minimal geometry shaped into a meditative presence.</p>
+          <article class="art-card gs-scroll" data-category="sculpture" style="transition-delay: 0.1s">
+            <div class="img-wrapper">
+              <img
+                src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80"
+                alt="Stone sculpture close-up"
+                loading="lazy"
+                width="900"
+                height="1200"
+              />
             </div>
-          </article>
-
-          <article class="art-card" data-category="photo">
-            <img
-              src="https://images.unsplash.com/photo-1518998053901-5348d3961a04?auto=format&fit=crop&w=900&q=80"
-              alt="Artistic photography composition"
-            />
-            <div class="art-card-body">
-              <span>Photo</span>
-              <h3>Still Light</h3>
-              <p>Shadows and texture arranged with cinematic calm.</p>
-            </div>
-          </article>
-
-          <article class="art-card" data-category="painting">
-            <img
-              src="https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?auto=format&fit=crop&w=900&q=80"
-              alt="Large modern painting on wall"
-            />
-            <div class="art-card-body">
-              <span>Painting</span>
-              <h3>Velvet Horizon</h3>
-              <p>Soft gradients floating between memory and dream.</p>
-            </div>
-          </article>
-
-          <article class="art-card" data-category="sculpture">
-            <img
-              src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80"
-              alt="Stone sculpture close-up"
-            />
-            <div class="art-card-body">
+            <div class="art-card-body glass-overlay">
               <span>Sculpture</span>
               <h3>Earth Vessel</h3>
               <p>Organic contours carved with raw elegance.</p>
             </div>
           </article>
 
-          <article class="art-card" data-category="photo">
-            <img
-              src="https://images.unsplash.com/photo-1504198453319-5ce911bafcde?auto=format&fit=crop&w=900&q=80"
-              alt="Fine art photo framed in exhibition"
-            />
-            <div class="art-card-body">
+          <article class="art-card gs-scroll" data-category="photo" style="transition-delay: 0.2s">
+            <div class="img-wrapper">
+              <img
+                src="https://images.unsplash.com/photo-1504198453319-5ce911bafcde?auto=format&fit=crop&w=900&q=80"
+                alt="Fine art photo framed in exhibition"
+                loading="lazy"
+                width="900"
+                height="1200"
+              />
+            </div>
+            <div class="art-card-body glass-overlay">
               <span>Photo</span>
               <h3>Frames of Time</h3>
               <p>Quiet documentary tones with gallery-like stillness.</p>
             </div>
           </article>
+
+          <article class="art-card gs-scroll" data-category="painting">
+            <div class="img-wrapper">
+              <img
+                src="https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?auto=format&fit=crop&w=900&q=80"
+                alt="Large modern painting on wall"
+                loading="lazy"
+                width="900"
+                height="1200"
+              />
+            </div>
+            <div class="art-card-body glass-overlay">
+              <span>Painting</span>
+              <h3>Velvet Horizon</h3>
+              <p>Soft gradients floating between memory and dream.</p>
+            </div>
+          </article>
+
+          <article class="art-card gs-scroll" data-category="sculpture" style="transition-delay: 0.1s">
+            <div class="img-wrapper">
+              <img
+                src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?auto=format&fit=crop&w=900&q=80"
+                alt="Museum sculpture in a gallery"
+                loading="lazy"
+                width="900"
+                height="1200"
+              />
+            </div>
+            <div class="art-card-body glass-overlay">
+              <span>Sculpture</span>
+              <h3>Silent Form</h3>
+              <p>Minimal geometry shaped into a meditative presence.</p>
+            </div>
+          </article>
+
+          <article class="art-card gs-scroll" data-category="photo" style="transition-delay: 0.2s">
+            <div class="img-wrapper">
+              <img
+                src="https://images.unsplash.com/photo-1518998053901-5348d3961a04?auto=format&fit=crop&w=900&q=80"
+                alt="Artistic photography composition"
+                loading="lazy"
+                width="900"
+                height="1200"
+              />
+            </div>
+            <div class="art-card-body glass-overlay">
+              <span>Photo</span>
+              <h3>Still Light</h3>
+              <p>Shadows and texture arranged with cinematic calm.</p>
+            </div>
+          </article>
         </div>
       </section>
 
-      <section class="section visit" id="visit">
-        <div class="visit-panel">
-          <div>
+      <section class="section visit gs-scroll" id="visit">
+        <div class="visit-panel glass-panel">
+          <div class="visit-content">
             <p class="eyebrow">Visit The Space</p>
             <h2>Private viewings, artist talks, and seasonal showcases.</h2>
             <p>
@@ -183,22 +314,34 @@
               exhibition experience.
             </p>
           </div>
-          <form class="visit-form">
-            <input type="text" placeholder="Your name" />
-            <input type="email" placeholder="Email address" />
-            <button type="button" id="reserveBtn" class="button button-primary">
-              Reserve Now
-            </button>
+          <form class="visit-form" id="visitForm">
+            <label class="sr-only" for="visitName">Your name</label>
+            <input id="visitName" name="name" type="text" placeholder="Your Name" autocomplete="name" required />
+            <label class="sr-only" for="visitEmail">Email address</label>
+            <input id="visitEmail" name="email" type="email" placeholder="Email Address" autocomplete="email" required />
+            <button type="submit" id="reserveBtn" class="button button-primary">Request Invitation</button>
           </form>
         </div>
       </section>
     </main>
 
-    <footer class="footer">
-      <p>Atelier Muse</p>
-      <p>Curated digital art experiences for modern collectors.</p>
+    <footer class="footer gs-scroll">
+      <div class="footer-brand">
+        <p class="brand-footer">Atelier Muse</p>
+        <p class="footer-tagline">Curated digital art experiences for modern collectors.</p>
+      </div>
+      <p class="footer-year"></p>
+      <div class="footer-links">
+        <a href="https://instagram.com" rel="noopener noreferrer" target="_blank">Instagram</a>
+        <a href="https://twitter.com" rel="noopener noreferrer" target="_blank">Twitter</a>
+        <a href="#top">Back to top</a>
+      </div>
     </footer>
 
+    <div class="toast-region" id="toastRegion" aria-live="polite" aria-atomic="true"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

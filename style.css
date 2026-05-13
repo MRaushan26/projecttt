@@ -1078,3 +1078,142 @@ h3,
     bottom: 1rem;
   }
 }
+
+/* --- CSS Only Additions --- */
+
+/* Mobile Nav Toggle */
+.nav:has(#nav-toggle:checked) .nav-links {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.nav:has(#nav-toggle:checked) .nav-toggle-bar:first-child {
+  transform: translateY(4px) rotate(45deg);
+}
+.nav:has(#nav-toggle:checked) .nav-toggle-bar:last-child {
+  transform: translateY(-4px) rotate(-45deg);
+}
+
+/* Gallery Filtering */
+body:has(#filter-painting:checked) .art-card:not([data-category="painting"]) {
+  display: none !important;
+}
+body:has(#filter-sculpture:checked) .art-card:not([data-category="sculpture"]) {
+  display: none !important;
+}
+body:has(#filter-photo:checked) .art-card:not([data-category="photo"]) {
+  display: none !important;
+}
+body:has(#filter-all:checked) .art-card {
+  display: block;
+}
+
+/* Update filter buttons look based on radio state */
+body:has(#filter-all:checked) label[for="filter-all"],
+body:has(#filter-painting:checked) label[for="filter-painting"],
+body:has(#filter-sculpture:checked) label[for="filter-sculpture"],
+body:has(#filter-photo:checked) label[for="filter-photo"] {
+  background: linear-gradient(135deg, #fafafa, #e4e4e7);
+  color: var(--bg);
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 0 0 1px var(--accent-soft), 0 8px 28px rgba(212, 181, 106, 0.15);
+}
+
+/* Toast */
+.css-toast {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 150;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  border-radius: 16px;
+  border: 1px solid var(--line-light);
+  background: rgba(18, 18, 22, 0.92);
+  backdrop-filter: blur(16px);
+  color: var(--text);
+  font-size: 0.92rem;
+  box-shadow: var(--shadow);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(12px) scale(0.98);
+  transition: all 0.45s var(--ease-out);
+}
+#toast-trigger:target {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0) scale(1);
+}
+#toast-trigger:has(#toast-close:checked) {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(8px);
+}
+.toast-close-btn {
+  cursor: pointer;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: var(--muted);
+}
+.toast-close-btn:hover {
+  color: var(--text);
+}
+
+/* Scroll Animations */
+@keyframes reveal-up {
+  from { opacity: 0; transform: translateY(36px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes reveal-down {
+  from { opacity: 0; transform: translateY(-40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes reveal-scale {
+  from { opacity: 0; transform: scale(0.94); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.css-reveal-down { animation: reveal-down 0.9s var(--ease-out) both; }
+.css-reveal-up { animation: reveal-up 0.85s var(--ease-out) both; }
+.css-reveal-scale { animation: reveal-scale 1s var(--ease-out) both; }
+
+/* Add delays using nth-child or style attributes if needed */
+.hero-title { animation-delay: 0.1s; }
+.hero-text { animation-delay: 0.2s; }
+.hero-actions { animation-delay: 0.3s; }
+
+/* Modern CSS Scroll-driven Animations */
+@supports (animation-timeline: view()) {
+  .css-scroll {
+    animation: reveal-up 0.9s var(--ease-out) both;
+    animation-timeline: view();
+    animation-range: entry 10% cover 30%;
+  }
+  
+  /* Scroll Progress Bar */
+  @keyframes scroll-progress-anim {
+    from { width: 0%; }
+    to { width: 100%; }
+  }
+  .scroll-progress {
+    animation: scroll-progress-anim linear;
+    animation-timeline: scroll();
+  }
+}
+@supports not (animation-timeline: view()) {
+  .css-scroll {
+    animation: reveal-up 0.9s var(--ease-out) both;
+  }
+}
+
+/* Stats Counter formatting */
+.stat-value::after {
+  content: "+";
+  color: var(--accent);
+  font-size: 0.6em;
+  vertical-align: super;
+}
+

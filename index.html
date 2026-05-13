@@ -31,40 +31,41 @@
     <div class="scroll-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-label="Page scroll progress"></div>
 
     <header class="hero" id="top">
-      <nav class="nav gs-reveal-down" aria-label="Primary">
+      <nav class="nav css-reveal-down" aria-label="Primary">
         <a class="brand" href="#top">
           <span class="brand-mark" aria-hidden="true"></span>
           Atelier Muse
         </a>
+        <input type="checkbox" id="nav-toggle" class="nav-checkbox sr-only" aria-hidden="true">
         <div class="nav-links" id="navLinks">
           <a href="#collection">Collection</a>
           <a href="#gallery">Gallery</a>
           <a href="#visit">Visit</a>
         </div>
-        <button type="button" class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Open menu">
+        <label for="nav-toggle" class="nav-toggle" aria-label="Toggle menu">
           <span class="nav-toggle-bar"></span>
           <span class="nav-toggle-bar"></span>
-        </button>
+        </label>
       </nav>
 
       <div class="hero-content">
         <div class="hero-copy">
-          <p class="eyebrow gs-reveal-up">Digital Art House</p>
-          <h1 class="gs-reveal-up hero-title" style="transition-delay: 0.1s">
+          <p class="eyebrow css-reveal-up">Digital Art House</p>
+          <h1 class="css-reveal-up hero-title" style="transition-delay: 0.1s">
             Where modern color meets timeless imagination.
           </h1>
-          <p class="hero-text gs-reveal-up" style="transition-delay: 0.2s">
+          <p class="hero-text css-reveal-up" style="transition-delay: 0.2s">
             Explore a curated online space for expressive paintings, sculptural
             forms, and experimental visuals sourced from artists around the
             world.
           </p>
-          <div class="hero-actions gs-reveal-up" style="transition-delay: 0.3s">
+          <div class="hero-actions css-reveal-up" style="transition-delay: 0.3s">
             <a class="button button-primary" href="#gallery">View Gallery</a>
             <a class="button button-secondary" href="#visit">Book a Visit</a>
           </div>
         </div>
 
-        <div class="hero-card gs-reveal-scale">
+        <div class="hero-card css-reveal-scale">
           <div class="hero-card-frame" aria-hidden="true"></div>
           <div class="glass-layer"></div>
           <img
@@ -81,7 +82,7 @@
       </div>
     </header>
 
-    <div class="marquee-wrap gs-scroll" aria-hidden="true">
+    <div class="marquee-wrap css-scroll" aria-hidden="true">
       <div class="marquee">
         <span>Paintings</span>
         <span class="marquee-dot">◆</span>
@@ -111,34 +112,34 @@
     </div>
 
     <main id="main">
-      <section class="section stats gs-scroll" aria-label="Highlights">
+      <section class="section stats css-scroll" aria-label="Highlights">
         <div class="stats-grid">
           <div class="stat">
-            <span class="stat-value" data-count="48">0</span>
+            <span class="stat-value" data-count="48">48</span>
             <span class="stat-label">Represented artists</span>
           </div>
           <div class="stat">
-            <span class="stat-value" data-count="120">0</span>
+            <span class="stat-value" data-count="120">120</span>
             <span class="stat-label">Works in rotation</span>
           </div>
           <div class="stat">
-            <span class="stat-value" data-count="32">0</span>
+            <span class="stat-value" data-count="32">32</span>
             <span class="stat-label">Cities in our orbit</span>
           </div>
           <div class="stat">
-            <span class="stat-value" data-count="12">0</span>
+            <span class="stat-value" data-count="12">12</span>
             <span class="stat-label">Seasonal showcases</span>
           </div>
         </div>
       </section>
 
       <section class="section intro" id="collection">
-        <div class="section-heading gs-scroll">
+        <div class="section-heading css-scroll">
           <p class="eyebrow">Curated Collection</p>
           <h2>Art that invites pause, wonder, and conversation.</h2>
         </div>
 
-        <div class="bento-grid gs-scroll">
+        <div class="bento-grid css-scroll">
           <article class="bento-card bento-large group">
             <div
               class="bento-bg"
@@ -177,7 +178,7 @@
         </div>
       </section>
 
-      <blockquote class="section manifesto gs-scroll">
+      <blockquote class="section manifesto css-scroll">
         <p class="manifesto-quote">
           We believe a gallery should feel like dusk in a great city—luminous, hushed, and full of possibility.
         </p>
@@ -185,21 +186,28 @@
       </blockquote>
 
       <section class="section gallery-section" id="gallery">
-        <div class="section-heading split gs-scroll">
+        <div class="section-heading split css-scroll">
           <div>
             <p class="eyebrow">Online Gallery</p>
             <h2>Choose a mood and step into the collection.</h2>
           </div>
           <div class="filters" role="group" aria-label="Gallery filters">
-            <button type="button" class="filter-btn active" data-filter="all">All</button>
-            <button type="button" class="filter-btn" data-filter="painting">Painting</button>
-            <button type="button" class="filter-btn" data-filter="sculpture">Sculpture</button>
-            <button type="button" class="filter-btn" data-filter="photo">Photo</button>
+            <input type="radio" name="gallery-filter" id="filter-all" class="filter-radio sr-only" checked>
+            <label for="filter-all" class="filter-btn">All</label>
+            
+            <input type="radio" name="gallery-filter" id="filter-painting" class="filter-radio sr-only">
+            <label for="filter-painting" class="filter-btn">Painting</label>
+            
+            <input type="radio" name="gallery-filter" id="filter-sculpture" class="filter-radio sr-only">
+            <label for="filter-sculpture" class="filter-btn">Sculpture</label>
+            
+            <input type="radio" name="gallery-filter" id="filter-photo" class="filter-radio sr-only">
+            <label for="filter-photo" class="filter-btn">Photo</label>
           </div>
         </div>
 
         <div class="gallery-grid">
-          <article class="art-card gs-scroll" data-category="painting">
+          <article class="art-card css-scroll" data-category="painting">
             <div class="img-wrapper">
               <img
                 src="https://images.unsplash.com/photo-1547891654-e66ed7ebb968?auto=format&fit=crop&w=900&q=80"
@@ -216,7 +224,7 @@
             </div>
           </article>
 
-          <article class="art-card gs-scroll" data-category="sculpture" style="transition-delay: 0.1s">
+          <article class="art-card css-scroll" data-category="sculpture" style="transition-delay: 0.1s">
             <div class="img-wrapper">
               <img
                 src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80"
@@ -233,7 +241,7 @@
             </div>
           </article>
 
-          <article class="art-card gs-scroll" data-category="photo" style="transition-delay: 0.2s">
+          <article class="art-card css-scroll" data-category="photo" style="transition-delay: 0.2s">
             <div class="img-wrapper">
               <img
                 src="https://images.unsplash.com/photo-1504198453319-5ce911bafcde?auto=format&fit=crop&w=900&q=80"
@@ -250,7 +258,7 @@
             </div>
           </article>
 
-          <article class="art-card gs-scroll" data-category="painting">
+          <article class="art-card css-scroll" data-category="painting">
             <div class="img-wrapper">
               <img
                 src="https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?auto=format&fit=crop&w=900&q=80"
@@ -267,7 +275,7 @@
             </div>
           </article>
 
-          <article class="art-card gs-scroll" data-category="sculpture" style="transition-delay: 0.1s">
+          <article class="art-card css-scroll" data-category="sculpture" style="transition-delay: 0.1s">
             <div class="img-wrapper">
               <img
                 src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?auto=format&fit=crop&w=900&q=80"
@@ -284,7 +292,7 @@
             </div>
           </article>
 
-          <article class="art-card gs-scroll" data-category="photo" style="transition-delay: 0.2s">
+          <article class="art-card css-scroll" data-category="photo" style="transition-delay: 0.2s">
             <div class="img-wrapper">
               <img
                 src="https://images.unsplash.com/photo-1518998053901-5348d3961a04?auto=format&fit=crop&w=900&q=80"
@@ -303,7 +311,7 @@
         </div>
       </section>
 
-      <section class="section visit gs-scroll" id="visit">
+      <section class="section visit css-scroll" id="visit">
         <div class="visit-panel glass-panel">
           <div class="visit-content">
             <p class="eyebrow">Visit The Space</p>
@@ -319,18 +327,18 @@
             <input id="visitName" name="name" type="text" placeholder="Your Name" autocomplete="name" required />
             <label class="sr-only" for="visitEmail">Email address</label>
             <input id="visitEmail" name="email" type="email" placeholder="Email Address" autocomplete="email" required />
-            <button type="submit" id="reserveBtn" class="button button-primary">Request Invitation</button>
+            <a href="#toast-trigger" id="reserveBtn" class="button button-primary" style="text-align:center;">Request Invitation</a>
           </form>
         </div>
       </section>
     </main>
 
-    <footer class="footer gs-scroll">
+    <footer class="footer css-scroll">
       <div class="footer-brand">
         <p class="brand-footer">Atelier Muse</p>
         <p class="footer-tagline">Curated digital art experiences for modern collectors.</p>
       </div>
-      <p class="footer-year"></p>
+      <p class="footer-year">© 2026 Atelier Muse</p>
       <div class="footer-links">
         <a href="https://instagram.com" rel="noopener noreferrer" target="_blank">Instagram</a>
         <a href="https://twitter.com" rel="noopener noreferrer" target="_blank">Twitter</a>
@@ -338,10 +346,10 @@
       </div>
     </footer>
 
-    <div class="toast-region" id="toastRegion" aria-live="polite" aria-atomic="true"></div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="script.js"></script>
+    <div class="css-toast" id="toast-trigger">
+      <input type="checkbox" id="toast-close" class="sr-only">
+      <div class="toast-message">Thank you — your invitation request has been received.</div>
+      <label for="toast-close" class="toast-close-btn">&times;</label>
+    </div>
   </body>
 </html>
